@@ -1,0 +1,1 @@
+tools\MarkdownDocNet ..\Monacs\Monacs.Core\bin\Debug\net461\Monacs.Core.xml ..\Monacs\Monacs.Core\bin\Debug\net461\Monacs.Core.dll src\apidoc.md

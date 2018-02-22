@@ -1,0 +1,11 @@
+site_name: Monacs
+pages:
+  - Index: index.md
+  - Quick Start: quickstart.md
+  - Components:
+    - Option: option.md
+    - Result: result.md
+    - ErrorDetails: errors.md
+  - Glossary: glossary.md
+  - API docs: apidoc.md
+theme: readthedocs
