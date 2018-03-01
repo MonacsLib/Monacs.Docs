@@ -21,7 +21,7 @@ Now, let's define some data structure which will have an optional field. If you 
         public Option<string> Notes { get; set; }
     }
 
-[`Option<T>`](Option.md) is a generic struct that wraps any value and it annotates that given property, function parameter or result can be empty. Let's create object of `Expense` class and see it in action:
+[`Option<T>`](option.md) is a generic struct that wraps any value and it annotates that given property, function parameter or result can be empty. Let's create object of `Expense` class and see it in action:
 
     using Monacs.Core;
     ...
@@ -155,7 +155,7 @@ This should give you a brief overview of how to work with `Option<T>` type, but 
 
 ## Working with `Result<T>`
 
-Similar to `Option<T>`, [`Result<T>` type](Result.md) is a struct and has two possible states - `Ok` with a data of type `T` in the `Value` property, and `Error` with a data of [type `ErrorDetails`](Errors.md) in the `Error` property. This makes it perfect candidate for second common case, where you have a function and it may fail to execute properly. Usualy in such case you can expect an exception to be thrown. The problem with exceptions is that you don't have any explicit way to say that the function may fail and which exceptions it may throw (apart from comments). Handling exceptions is also problematic, as you need to decide when to wrap the code into `try...catch` - having it everywhere requires a lot of code, and it's also impacting performance quite substantialy. So just like `Option<T>` mitigates the problem of null, `Result<T>` deals with exceptions.
+Similar to `Option<T>`, [`Result<T>` type](result.md) is a struct and has two possible states - `Ok` with a data of type `T` in the `Value` property, and `Error` with a data of [type `ErrorDetails`](errors.md) in the `Error` property. This makes it perfect candidate for second common case, where you have a function and it may fail to execute properly. Usualy in such case you can expect an exception to be thrown. The problem with exceptions is that you don't have any explicit way to say that the function may fail and which exceptions it may throw (apart from comments). Handling exceptions is also problematic, as you need to decide when to wrap the code into `try...catch` - having it everywhere requires a lot of code, and it's also impacting performance quite substantialy. So just like `Option<T>` mitigates the problem of null, `Result<T>` deals with exceptions.
 
 There is very similar set of extensions provided for `Result<T>` to the ones for `Option<T>`. The most important ones like `Bind`, `Map` and `Match` are there, as well as many others. There are also async versions of them, provided in `Monacs.Core.Async` namespace, such as `BindAsync` or `MapAsync`. You can then operate on `Task<Result<T>>`, have async `binder` or `mapper` functions and so on. One thing to remember is that once you jump into async code, you will have to keep using async variants to the the end of the function chain - until you await on the chain and get the underlying `Result<T>`. See the example below:
 
@@ -175,8 +175,8 @@ There is very similar set of extensions provided for `Result<T>` to the ones for
         // result is now Result<Customer>, we can ignore the value (if we use CQRS approach) using non-async extension
     }
 
-You can find list of available extensions in the [API documentation](TODO).
+You can find list of available extensions in the [API documentation](apidoc.md).
 
 ## `Unit` - type representing no value
 
-To avoid need to duplicate the APIs for the functions that don't need to return anything (defined as `void` in C#) Monacs uses [`Unit` type](Unit.md), known from other languages (like F#) and libraries (like Reactive Extensions). `Unit` Has only one value and it's available as `Unit.Default` property. You can use it as a substitute for any type whenever you need some, but you don't care about the value, e.g. you can return `Task<Unit>` (equivalent of non-generic `Task`) or `Func<T>` instead of `Action`. `Result<Unit>` can be used as a return type for functions with side effects that don't return any value, e.g. saving data to the database. There are some additional extensions provided for `Result<Unit>` in `Monacs.Core.Unit` namespace, like the mentioned above `Ignore` function.
+To avoid need to duplicate the APIs for the functions that don't need to return anything (defined as `void` in C#) Monacs uses [`Unit` type](unit.md), known from other languages (like F#) and libraries (like Reactive Extensions). `Unit` Has only one value and it's available as `Unit.Default` property. You can use it as a substitute for any type whenever you need some, but you don't care about the value, e.g. you can return `Task<Unit>` (equivalent of non-generic `Task`) or `Func<T>` instead of `Action`. `Result<Unit>` can be used as a return type for functions with side effects that don't return any value, e.g. saving data to the database. There are some additional extensions provided for `Result<Unit>` in `Monacs.Core.Unit` namespace, like the mentioned above `Ignore` function.

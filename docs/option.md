@@ -1,4 +1,4 @@
-# Monacs.Core.Option<T>
+# Monacs.Core.Option&lt;T&gt;
 
 `Option<T>` type is an implementation of Maybe monad. It has two possible states - default one representing absence of value (`None`) and the other one representing presence of value (`Some`). `Option<T>` wraps value that can be absent, in similar way as `Nullable<T>` wraps value types. The are core differences though. While `Nullable<T>` only wraps structs (value types), `Option<T>` works with all kinds of types, making things more consistent. The value representing absence of data in `Nullable<T>` is the same as for reference types - both use `null` for that purpose. With `Option<T>` you don't really care what is the value representing absence of data, because it's the property of the type itself.
 

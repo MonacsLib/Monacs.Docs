@@ -1,6 +1,6 @@
-# Monacs.Core.Result<T>
+# Monacs.Core.Result&lt;T&gt;
 
-`Result<T>` type is a monad encapsulating common case when function call may end up with success or error. It has two possible states - one representing successful execution and a value being returned (`Ok`) and the other one representing error in execution (`Error`). You can find some similarities to Either, IO or Task monads, if you're familiar with any of those. It is meant to inform consumer of the function that the execution may not finish successfully (very often due to external side effects) and suggests handling such case on the consumer side. The most common examples would be any functions performing IO tasks. If such operation fails, the author of the function should provide all needed details in the `Error` property, described by the [`ErrorDetails` class](Errors.md).
+`Result<T>` type is a monad encapsulating common case when function call may end up with success or error. It has two possible states - one representing successful execution and a value being returned (`Ok`) and the other one representing error in execution (`Error`). You can find some similarities to Either, IO or Task monads, if you're familiar with any of those. It is meant to inform consumer of the function that the execution may not finish successfully (very often due to external side effects) and suggests handling such case on the consumer side. The most common examples would be any functions performing IO tasks. If such operation fails, the author of the function should provide all needed details in the `Error` property, described by the [`ErrorDetails` class](errors.md).
 
 ## When to use it
 
