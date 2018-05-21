@@ -1,465 +1,5 @@
 # Assembly <code>Monacs.Core</code>
 
-## Type <a name="T%3aMonacs.Core.Async.Result"><code>Monacs.Core.Async.Result</code></a>
- Contains the set of async extensions to work with the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.
-
-
-### Methods
-#### Method <a name="M%3aMonacs.Core.Async.Result.BindAsync%60%602(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%601%7d%7d%7d)"><code>BindAsync</code></a>
- Transforms the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>binder</c>](#binder) function.             If the input result is Ok, returns the value of the binder call (which is [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) of [<c>TOut</c>](#TOut) ).             Otherwise returns Error case of the Result of [<c>TOut</c>](#TOut) .
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the input result.|
-|TOut|Type of the value in the returned result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to bind with.|
-|binder|Function called with the input result value if it's Ok case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.BindAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%601%7d%7d%7d)"><code>BindAsync</code></a>
- Transforms the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>binder</c>](#binder) function.             If the input result is Ok, returns the value of the binder call (which is [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) of [<c>TOut</c>](#TOut) ).             Otherwise returns Error case of the Result of [<c>TOut</c>](#TOut) .
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the input result.|
-|TOut|Type of the value in the returned result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to bind with.|
-|binder|Function called with the input result value if it's Ok case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.BindAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2cMonacs.Core.Result%7b%60%601%7d%7d)"><code>BindAsync</code></a>
- Transforms the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>binder</c>](#binder) function.             If the input result is Ok, returns the value of the binder call (which is [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) of [<c>TOut</c>](#TOut) ).             Otherwise returns Error case of the Result of [<c>TOut</c>](#TOut) .
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the input result.|
-|TOut|Type of the value in the returned result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to bind with.|
-|binder|Function called with the input result value if it's Ok case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.MapAsync%60%602(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d)"><code>MapAsync</code></a>
- Maps the value of the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>mapper</c>](#mapper) function.             If the input result is Ok, returns the Ok case with the value of the mapper call (which is [<c>TOut</c>](#TOut) ).             Otherwise returns Error case of the Result of [<c>TOut</c>](#TOut) .
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the input result.|
-|TOut|Type of the value in the returned result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to map on.|
-|mapper|Function called with the input result value if it's Ok case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.MapAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d)"><code>MapAsync</code></a>
- Maps the value of the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>mapper</c>](#mapper) function.             If the input result is Ok, returns the Ok case with the value of the mapper call (which is [<c>TOut</c>](#TOut) ).             Otherwise returns Error case of the Result of [<c>TOut</c>](#TOut) .
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the input result.|
-|TOut|Type of the value in the returned result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to map on.|
-|mapper|Function called with the input result value if it's Ok case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.MapAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%7d)"><code>MapAsync</code></a>
- Maps the value of the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>mapper</c>](#mapper) function.             If the input result is Ok, returns the Ok case with the value of the mapper call (which is [<c>TOut</c>](#TOut) ).             Otherwise returns Error case of the Result of [<c>TOut</c>](#TOut) .
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the input result.|
-|TOut|Type of the value in the returned result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to map on.|
-|mapper|Function called with the input result value if it's Ok case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.MatchAsync%60%602(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d)"><code>MatchAsync</code></a>
- Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
-
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the result.|
-|TOut|Type of the returned value.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to match on.|
-|ok|Function called for the Ok case.|
-|error|Function called for the Error case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.MatchAsync%60%602(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2c%60%601%7d)"><code>MatchAsync</code></a>
- Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
-
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the result.|
-|TOut|Type of the returned value.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to match on.|
-|ok|Function called for the Ok case.|
-|error|Function called for the Error case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.MatchAsync%60%602(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2c%60%601%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d)"><code>MatchAsync</code></a>
- Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
-
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the result.|
-|TOut|Type of the returned value.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to match on.|
-|ok|Function called for the Ok case.|
-|error|Function called for the Error case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.MatchAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2c%60%601%7d)"><code>MatchAsync</code></a>
- Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
-
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the result.|
-|TOut|Type of the returned value.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to match on.|
-|ok|Function called for the Ok case.|
-|error|Function called for the Error case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.MatchAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d)"><code>MatchAsync</code></a>
- Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
-
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the result.|
-|TOut|Type of the returned value.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to match on.|
-|ok|Function called for the Ok case.|
-|error|Function called for the Error case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.MatchAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2c%60%601%7d)"><code>MatchAsync</code></a>
- Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
-
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the result.|
-|TOut|Type of the returned value.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to match on.|
-|ok|Function called for the Ok case.|
-|error|Function called for the Error case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.MatchAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d)"><code>MatchAsync</code></a>
- Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
-
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the result.|
-|TOut|Type of the returned value.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to match on.|
-|ok|Function called for the Ok case.|
-|error|Function called for the Error case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.IgnoreAsync%60%601(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d)"><code>IgnoreAsync</code></a>
- Rejects the value of the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) and returns [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) instead.              If the input [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) is Error then the error details are preserved.
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|T|Type of the encapsulated value.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result of which the value should be ignored.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.DoAsync%60%601(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Action%7b%60%600%7d)"><code>DoAsync</code></a>
- Performs the [<c>action</c>](#action) with the value of the [<c>result</c>](#result) if it's Ok case.             If the result is Error case nothing happens.             In both cases unmodified result is returned.
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|T|Type of the value in the result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to check for a value.|
-|action|Function executed if the result is Ok case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.DoAsync%60%601(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7d)"><code>DoAsync</code></a>
- Performs the [<c>action</c>](#action) with the value of the [<c>result</c>](#result) if it's Ok case.             If the result is Error case nothing happens.             In both cases unmodified result is returned.
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|T|Type of the value in the result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to check for a value.|
-|action|Function executed if the result is Ok case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.DoAsync%60%601(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7d)"><code>DoAsync</code></a>
- Performs the [<c>action</c>](#action) with the value of the [<c>result</c>](#result) if it's Ok case.             If the result is Error case nothing happens.             In both cases unmodified result is returned.
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|T|Type of the value in the result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to check for a value.|
-|action|Function executed if the result is Ok case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.DoWhenErrorAsync%60%601(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Action%7bMonacs.Core.ErrorDetails%7d)"><code>DoWhenErrorAsync</code></a>
- Performs the [<c>action</c>](#action) if the [<c>result</c>](#result) is Error case.             If the result is Ok case nothing happens.             In both cases unmodified result is returned.
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|T|Type of the value in the result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to check for a value.|
-|action|Function executed if the result is Error case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.DoWhenErrorAsync%60%601(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2cSystem.Threading.Tasks.Task%7d)"><code>DoWhenErrorAsync</code></a>
- Performs the [<c>action</c>](#action) if the [<c>result</c>](#result) is Error case.             If the result is Ok case nothing happens.             In both cases unmodified result is returned.
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|T|Type of the value in the result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to check for a value.|
-|action|Function executed if the result is Error case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.DoWhenErrorAsync%60%601(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2cSystem.Threading.Tasks.Task%7d)"><code>DoWhenErrorAsync</code></a>
- Performs the [<c>action</c>](#action) if the [<c>result</c>](#result) is Error case.             If the result is Ok case nothing happens.             In both cases unmodified result is returned.
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|T|Type of the value in the result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|The result to check for a value.|
-|action|Function executed if the result is Error case.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.FlipAsync%60%601(Monacs.Core.Result%7bSystem.Threading.Tasks.Task%7b%60%600%7d%7d)"><code>FlipAsync</code></a>
- Transforms [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) with async value inside to [<c>System.Threading.Tasks.Task\`1</c>](#T%3aSystem.Threading.Tasks.Task%601) of the result,             preserving original result's state and value.
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|T|Type of the value in the result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|Result to take the value from.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.TryCatchAsync%60%601(System.Func%7bSystem.Threading.Tasks.Task%7b%60%600%7d%7d%2cSystem.Func%7bSystem.Exception%2cMonacs.Core.ErrorDetails%7d)"><code>TryCatchAsync</code></a>
- Tries to execute [<c>func</c>](#func) .             If the execution completes without exception, returns Ok with the function result.             Otherwise returns Error with details generated by [<c>errorHandler</c>](#errorHandler) based on the thrown exception.
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|T|Type of the value in the result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|func|Function to execute.|
-|errorHandler|Function that generates error details in case of exception.|
-
-#### Method <a name="M%3aMonacs.Core.Async.Result.TryCatchAsync%60%602(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d%2cSystem.Func%7b%60%600%2cSystem.Exception%2cMonacs.Core.ErrorDetails%7d)"><code>TryCatchAsync</code></a>
- Tries to execute [<c>func</c>](#func) with the value from the [<c>result</c>](#result) as an input.             If the execution completes without exception, returns Ok with the function result.             Otherwise returns Error with details generated by [<c>errorHandler</c>](#errorHandler) based on the thrown exception.             If the [<c>result</c>](#result) is Error function is not executed and the Error is returned.
-
-
-
-
-
-
-
-##### Generic parameters
-|Name|Description|
-|---|---|
-|TIn|Type of the value in the input result.|
-|TOut|Type of the value in the output result.|
-
-##### Parameters
-|Name|Description|
-|---|---|
-|result|Result to take the value from.|
-|func|Function to execute.|
-|errorHandler|Function that generates error details in case of exception.|
-
-
 ## Type <a name="T%3aMonacs.Core.ErrorDetails"><code>Monacs.Core.ErrorDetails</code></a>
  Represents the details of the error in case of failed operation.             To create the instances use the factory methods from the [<c>Errors</c>](#T%3aMonacs.Core.Errors) class.
 
@@ -488,11 +28,6 @@
 
 ## Type <a name="T%3aMonacs.Core.ErrorLevel"><code>Monacs.Core.ErrorLevel</code></a>
  Represents the severity of the error.
-
-
-### Fields
-#### Field <a name="F%3aMonacs.Core.ErrorLevel.Trace"><code>Trace</code></a>
-
 
 
 ## Type <a name="T%3aMonacs.Core.Errors"><code>Monacs.Core.Errors</code></a>
@@ -1237,6 +772,466 @@
 
 
 
+## Type <a name="T%3aMonacs.Core.AsyncResult"><code>Monacs.Core.AsyncResult</code></a>
+ Contains the set of async extensions to work with the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.
+
+
+### Methods
+#### Method <a name="M%3aMonacs.Core.AsyncResult.BindAsync%60%602(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%601%7d%7d%7d)"><code>BindAsync</code></a>
+ Transforms the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>binder</c>](#binder) function.             If the input result is Ok, returns the value of the binder call (which is [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) of [<c>TOut</c>](#TOut) ).             Otherwise returns Error case of the Result of [<c>TOut</c>](#TOut) .
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the input result.|
+|TOut|Type of the value in the returned result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to bind with.|
+|binder|Function called with the input result value if it's Ok case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.BindAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%601%7d%7d%7d)"><code>BindAsync</code></a>
+ Transforms the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>binder</c>](#binder) function.             If the input result is Ok, returns the value of the binder call (which is [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) of [<c>TOut</c>](#TOut) ).             Otherwise returns Error case of the Result of [<c>TOut</c>](#TOut) .
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the input result.|
+|TOut|Type of the value in the returned result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to bind with.|
+|binder|Function called with the input result value if it's Ok case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.BindAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2cMonacs.Core.Result%7b%60%601%7d%7d)"><code>BindAsync</code></a>
+ Transforms the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>binder</c>](#binder) function.             If the input result is Ok, returns the value of the binder call (which is [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) of [<c>TOut</c>](#TOut) ).             Otherwise returns Error case of the Result of [<c>TOut</c>](#TOut) .
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the input result.|
+|TOut|Type of the value in the returned result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to bind with.|
+|binder|Function called with the input result value if it's Ok case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.MapAsync%60%602(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d)"><code>MapAsync</code></a>
+ Maps the value of the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>mapper</c>](#mapper) function.             If the input result is Ok, returns the Ok case with the value of the mapper call (which is [<c>TOut</c>](#TOut) ).             Otherwise returns Error case of the Result of [<c>TOut</c>](#TOut) .
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the input result.|
+|TOut|Type of the value in the returned result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to map on.|
+|mapper|Function called with the input result value if it's Ok case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.MapAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d)"><code>MapAsync</code></a>
+ Maps the value of the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>mapper</c>](#mapper) function.             If the input result is Ok, returns the Ok case with the value of the mapper call (which is [<c>TOut</c>](#TOut) ).             Otherwise returns Error case of the Result of [<c>TOut</c>](#TOut) .
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the input result.|
+|TOut|Type of the value in the returned result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to map on.|
+|mapper|Function called with the input result value if it's Ok case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.MapAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%7d)"><code>MapAsync</code></a>
+ Maps the value of the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>mapper</c>](#mapper) function.             If the input result is Ok, returns the Ok case with the value of the mapper call (which is [<c>TOut</c>](#TOut) ).             Otherwise returns Error case of the Result of [<c>TOut</c>](#TOut) .
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the input result.|
+|TOut|Type of the value in the returned result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to map on.|
+|mapper|Function called with the input result value if it's Ok case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.MatchAsync%60%602(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d)"><code>MatchAsync</code></a>
+ Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the result.|
+|TOut|Type of the returned value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to match on.|
+|ok|Function called for the Ok case.|
+|error|Function called for the Error case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.MatchAsync%60%602(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2c%60%601%7d)"><code>MatchAsync</code></a>
+ Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the result.|
+|TOut|Type of the returned value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to match on.|
+|ok|Function called for the Ok case.|
+|error|Function called for the Error case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.MatchAsync%60%602(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2c%60%601%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d)"><code>MatchAsync</code></a>
+ Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the result.|
+|TOut|Type of the returned value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to match on.|
+|ok|Function called for the Ok case.|
+|error|Function called for the Error case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.MatchAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2c%60%601%7d)"><code>MatchAsync</code></a>
+ Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the result.|
+|TOut|Type of the returned value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to match on.|
+|ok|Function called for the Ok case.|
+|error|Function called for the Error case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.MatchAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d)"><code>MatchAsync</code></a>
+ Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the result.|
+|TOut|Type of the returned value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to match on.|
+|ok|Function called for the Ok case.|
+|error|Function called for the Error case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.MatchAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2c%60%601%7d)"><code>MatchAsync</code></a>
+ Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the result.|
+|TOut|Type of the returned value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to match on.|
+|ok|Function called for the Ok case.|
+|error|Function called for the Error case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.MatchAsync%60%602(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d)"><code>MatchAsync</code></a>
+ Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the result.|
+|TOut|Type of the returned value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to match on.|
+|ok|Function called for the Ok case.|
+|error|Function called for the Error case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.IgnoreAsync%60%601(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d)"><code>IgnoreAsync</code></a>
+ Rejects the value of the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) and returns [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) instead.              If the input [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) is Error then the error details are preserved.
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|T|Type of the encapsulated value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result of which the value should be ignored.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.DoAsync%60%601(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Action%7b%60%600%7d)"><code>DoAsync</code></a>
+ Performs the [<c>action</c>](#action) with the value of the [<c>result</c>](#result) if it's Ok case.             If the result is Error case nothing happens.             In both cases unmodified result is returned.
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|T|Type of the value in the result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to check for a value.|
+|action|Function executed if the result is Ok case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.DoAsync%60%601(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7d)"><code>DoAsync</code></a>
+ Performs the [<c>action</c>](#action) with the value of the [<c>result</c>](#result) if it's Ok case.             If the result is Error case nothing happens.             In both cases unmodified result is returned.
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|T|Type of the value in the result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to check for a value.|
+|action|Function executed if the result is Ok case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.DoAsync%60%601(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7d)"><code>DoAsync</code></a>
+ Performs the [<c>action</c>](#action) with the value of the [<c>result</c>](#result) if it's Ok case.             If the result is Error case nothing happens.             In both cases unmodified result is returned.
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|T|Type of the value in the result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to check for a value.|
+|action|Function executed if the result is Ok case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.DoWhenErrorAsync%60%601(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Action%7bMonacs.Core.ErrorDetails%7d)"><code>DoWhenErrorAsync</code></a>
+ Performs the [<c>action</c>](#action) if the [<c>result</c>](#result) is Error case.             If the result is Ok case nothing happens.             In both cases unmodified result is returned.
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|T|Type of the value in the result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to check for a value.|
+|action|Function executed if the result is Error case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.DoWhenErrorAsync%60%601(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2cSystem.Threading.Tasks.Task%7d)"><code>DoWhenErrorAsync</code></a>
+ Performs the [<c>action</c>](#action) if the [<c>result</c>](#result) is Error case.             If the result is Ok case nothing happens.             In both cases unmodified result is returned.
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|T|Type of the value in the result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to check for a value.|
+|action|Function executed if the result is Error case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.DoWhenErrorAsync%60%601(System.Threading.Tasks.Task%7bMonacs.Core.Result%7b%60%600%7d%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2cSystem.Threading.Tasks.Task%7d)"><code>DoWhenErrorAsync</code></a>
+ Performs the [<c>action</c>](#action) if the [<c>result</c>](#result) is Error case.             If the result is Ok case nothing happens.             In both cases unmodified result is returned.
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|T|Type of the value in the result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to check for a value.|
+|action|Function executed if the result is Error case.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.FlipAsync%60%601(Monacs.Core.Result%7bSystem.Threading.Tasks.Task%7b%60%600%7d%7d)"><code>FlipAsync</code></a>
+ Transforms [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) with async value inside to [<c>System.Threading.Tasks.Task\`1</c>](#T%3aSystem.Threading.Tasks.Task%601) of the result,             preserving original result's state and value.
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|T|Type of the value in the result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|Result to take the value from.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.TryCatchAsync%60%601(System.Func%7bSystem.Threading.Tasks.Task%7b%60%600%7d%7d%2cSystem.Func%7bSystem.Exception%2cMonacs.Core.ErrorDetails%7d)"><code>TryCatchAsync</code></a>
+ Tries to execute [<c>func</c>](#func) .             If the execution completes without exception, returns Ok with the function result.             Otherwise returns Error with details generated by [<c>errorHandler</c>](#errorHandler) based on the thrown exception.
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|T|Type of the value in the result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|func|Function to execute.|
+|errorHandler|Function that generates error details in case of exception.|
+
+#### Method <a name="M%3aMonacs.Core.AsyncResult.TryCatchAsync%60%602(Monacs.Core.Result%7b%60%600%7d%2cSystem.Func%7b%60%600%2cSystem.Threading.Tasks.Task%7b%60%601%7d%7d%2cSystem.Func%7b%60%600%2cSystem.Exception%2cMonacs.Core.ErrorDetails%7d)"><code>TryCatchAsync</code></a>
+ Tries to execute [<c>func</c>](#func) with the value from the [<c>result</c>](#result) as an input.             If the execution completes without exception, returns Ok with the function result.             Otherwise returns Error with details generated by [<c>errorHandler</c>](#errorHandler) based on the thrown exception.             If the [<c>result</c>](#result) is Error function is not executed and the Error is returned.
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TIn|Type of the value in the input result.|
+|TOut|Type of the value in the output result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|Result to take the value from.|
+|func|Function to execute.|
+|errorHandler|Function that generates error details in case of exception.|
+
+
 ## Type <a name="T%3aMonacs.Core.Result"><code>Monacs.Core.Result</code></a>
  Contains the set of extensions to work with the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.
 
@@ -1897,18 +1892,18 @@
 |errorHandler|Function that generates error details in case of exception.|
 
 
-## Type <a name="T%3aMonacs.Core.Unit.Result"><code>Monacs.Core.Unit.Result</code></a>
+## Type <a name="T%3aMonacs.Core.Unit.UnitResult"><code>Monacs.Core.Unit.UnitResult</code></a>
  Contains the set of extensions to work with the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.
 
 
 ### Methods
-#### Method <a name="M%3aMonacs.Core.Unit.Result.Ok"><code>Ok</code></a>
+#### Method <a name="M%3aMonacs.Core.Unit.UnitResult.Ok"><code>Ok</code></a>
  Creates the Ok case instance of the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) .
 
 
 
 
-#### Method <a name="M%3aMonacs.Core.Unit.Result.Error(Monacs.Core.ErrorDetails)"><code>Error</code></a>
+#### Method <a name="M%3aMonacs.Core.Unit.UnitResult.Error(Monacs.Core.ErrorDetails)"><code>Error</code></a>
  Creates the Error case instance of the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type, containing error instead of value.
 
 
@@ -1919,7 +1914,7 @@
 |---|---|
 |error|Details of the error.|
 
-#### Method <a name="M%3aMonacs.Core.Unit.Result.Ignore%60%601(Monacs.Core.Result%7b%60%600%7d)"><code>Ignore</code></a>
+#### Method <a name="M%3aMonacs.Core.Unit.UnitResult.Ignore%60%601(Monacs.Core.Result%7b%60%600%7d)"><code>Ignore</code></a>
  Rejects the value of the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) and returns [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) instead.              If the input [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) is Error then the error details are preserved.
 
 
@@ -1965,13 +1960,13 @@
 
 
 
-#### Method <a name="M%3aMonacs.Core.Unit.Unit.op_Equality(Monacs.Core.Unit.Unit%2cMonacs.Core.Unit.Unit)"><code>op_Equality</code></a>
+#### Method <a name="M%3aMonacs.Core.Unit.Unit.op_Equality(Monacs.Core.Unit.Unit%40%2cMonacs.Core.Unit.Unit%40)"><code>op_Equality</code></a>
  [<c>Unit.Unit</c>](#T%3aMonacs.Core.Unit.Unit) is always equal to itself.
 
 
 
 
-#### Method <a name="M%3aMonacs.Core.Unit.Unit.op_Inequality(Monacs.Core.Unit.Unit%2cMonacs.Core.Unit.Unit)"><code>op_Inequality</code></a>
+#### Method <a name="M%3aMonacs.Core.Unit.Unit.op_Inequality(Monacs.Core.Unit.Unit%40%2cMonacs.Core.Unit.Unit%40)"><code>op_Inequality</code></a>
  [<c>Unit.Unit</c>](#T%3aMonacs.Core.Unit.Unit) is always equal to itself.
 
 
