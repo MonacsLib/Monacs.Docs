@@ -12,6 +12,7 @@ pages:
     - Option: option.md
     - Result: result.md
     - ErrorDetails: errors.md
+    - Unit: unit.md
   - Glossary: glossary.md
   - API docs: apidoc.md
 
