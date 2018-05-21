@@ -1,5 +1,5 @@
 site_name: Monacs
-site_url: https://monacslib.github.io/
+site_url: https://monacslib.github.io
 site_description: Documentation for Monacs - A collection of basic monads and functional extensions for C#
 
 repo_url: https://github.com/MonacsLib/Monacs
