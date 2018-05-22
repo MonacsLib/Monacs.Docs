@@ -1892,18 +1892,332 @@
 |errorHandler|Function that generates error details in case of exception.|
 
 
-## Type <a name="T%3aMonacs.Core.Unit.UnitResult"><code>Monacs.Core.Unit.UnitResult</code></a>
+## Type <a name="T%3aMonacs.Core.TupleResult"><code>Monacs.Core.TupleResult</code></a>
+ Contains the set of tuple extensions to work with the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.
+
+
+### Methods
+#### Method <a name="M%3aMonacs.Core.TupleResult.Map2%60%603(Monacs.Core.Result%7bSystem.ValueTuple%7b%60%600%2c%60%601%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%2c%60%602%7d)"><code>Map2</code></a>
+ Maps the value of the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>mapper</c>](#mapper) function. 
+
+ If the input result is Ok, returns the Ok case with the value of the mapper call (which is [<c>TResult</c>](#TResult) ).             Otherwise returns Error case of the Result of [<c>TResult</c>](#TResult) .
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TFst|Type of first value in input result.|
+|TSnd|Type of second value in input result.|
+|TResult|Type of the value in the returned result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to map on.|
+|mapper|Function called with the input result value if it's Ok case.|
+
+#### Method <a name="M%3aMonacs.Core.TupleResult.Map3%60%604(Monacs.Core.Result%7bSystem.ValueTuple%7b%60%600%2c%60%601%2c%60%602%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%2c%60%602%2c%60%603%7d)"><code>Map3</code></a>
+ Maps the value of the [<c>result</c>](#result) into another [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) using the [<c>mapper</c>](#mapper) function. 
+
+ If the input result is Ok, returns the Ok case with the value of the mapper call (which is [<c>TResult</c>](#TResult) ).             Otherwise returns Error case of the Result of [<c>TResult</c>](#TResult) .
+
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TFst|Type of first value in input result.|
+|TSnd|Type of second value in input result.|
+|TTrd|Type of third value in input result.|
+|TResult|Type of the value in the returned result.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to map on.|
+|mapper|Function called with the input result value if it's Ok case.|
+
+#### Method <a name="M%3aMonacs.Core.TupleResult.Bind2%60%603(Monacs.Core.Result%7bSystem.ValueTuple%7b%60%600%2c%60%601%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%2cMonacs.Core.Result%7b%60%602%7d%7d)"><code>Bind2</code></a>
+ Applies railway pattern and binds two functions. 
+
+ If the result of the previous function is on the success path, the received result is taken as an argument and the next function is invoked. 
+
+ If the result of the previous function is on the failure path, the new error is created to match generic result type, but the error details remain the same.
+
+
+
+
+
+
+*Returns:* Result of the second function or error received from the first function.
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TFst|Type of the first output tuple value received from previous function.|
+|TSnd|Type of the second output tuple value received from previous function.|
+|TResult|Type of the output value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|Output of previous function|
+|binder|Passes the output of first function to the next one.|
+
+#### Method <a name="M%3aMonacs.Core.TupleResult.Bind3%60%604(Monacs.Core.Result%7bSystem.ValueTuple%7b%60%600%2c%60%601%2c%60%602%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%2c%60%602%2cMonacs.Core.Result%7b%60%603%7d%7d)"><code>Bind3</code></a>
+ Applies railway pattern and binds two functions. 
+
+ If the result of the previous function is on the success path, the received result is taken as an argument and the next function is invoked. 
+
+ If the result of the previous function is on the failure path, the new error is created to match generic result type, but the error details remain the same.
+
+
+
+
+
+
+
+*Returns:* Result of the second function or error received from the first function.
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TFst|Type of the first output tuple value received from previous function.|
+|TSnd|Type of the second output tuple value received from previous function.|
+|TTrd|Type of the second output tuple value received from previous function.|
+|TResult|Type of the output value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|Output of previous function|
+|binder|Passes the output of first function to the next one.|
+
+#### Method <a name="M%3aMonacs.Core.TupleResult.Match2%60%603(Monacs.Core.Result%7bSystem.ValueTuple%7b%60%600%2c%60%601%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%2c%60%602%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2c%60%602%7d)"><code>Match2</code></a>
+ Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
+
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TFst|Type of the first tuple value in the result.|
+|TSnd|Type of the second tuple value in the result.|
+|TResult|Type of the returned value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to match on.|
+|ok|Function called for the Ok case.|
+|error|Function called for the Error case.|
+
+#### Method <a name="M%3aMonacs.Core.TupleResult.Match3%60%604(Monacs.Core.Result%7bSystem.ValueTuple%7b%60%600%2c%60%601%2c%60%602%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%2c%60%602%2c%60%603%7d%2cSystem.Func%7bMonacs.Core.ErrorDetails%2c%60%603%7d)"><code>Match3</code></a>
+ Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, calls [<c>ok</c>](#ok) function             with the value from the result as a parameter and returns its result.             Otherwise calls [<c>error</c>](#error) function and returns its result.
+
+
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TFst|Type of the first tuple value in the result.|
+|TSnd|Type of the second tuple value in the result.|
+|TTrd|Type of the third tuple value in the result.|
+|TResult|Type of the returned value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to match on.|
+|ok|Function called for the Ok case.|
+|error|Function called for the Error case.|
+
+#### Method <a name="M%3aMonacs.Core.TupleResult.MatchTo2%60%603(Monacs.Core.Result%7bSystem.ValueTuple%7b%60%600%2c%60%601%7d%7d%2c%60%602%2c%60%602)"><code>MatchTo2</code></a>
+ Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, returns [<c>ok</c>](#ok) value.             Otherwise returns [<c>error</c>](#error) value.
+
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TFst|Type of the first tuple value in the result.|
+|TSnd|Type of the second tuple value in the result.|
+|TResult|Type of the returned value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to match on.|
+|ok|Value returned for the Ok case.|
+|error|Value returned for the Error case.|
+
+#### Method <a name="M%3aMonacs.Core.TupleResult.MatchTo3%60%604(Monacs.Core.Result%7bSystem.ValueTuple%7b%60%600%2c%60%601%2c%60%602%7d%7d%2c%60%603%2c%60%603)"><code>MatchTo3</code></a>
+ Does the pattern matching on the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.             If the [<c>result</c>](#result) is Ok, returns [<c>ok</c>](#ok) value.             Otherwise returns [<c>error</c>](#error) value.
+
+
+
+
+
+
+
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TFst|Type of the first tuple value in the result.|
+|TSnd|Type of the second tuple value in the result.|
+|TTrd|Type of the third tuple value in the result.|
+|TResult|Type of the returned value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|The result to match on.|
+|ok|Value returned for the Ok case.|
+|error|Value returned for the Error case.|
+
+#### Method <a name="M%3aMonacs.Core.TupleResult.Do2%60%602(Monacs.Core.Result%7bSystem.ValueTuple%7b%60%600%2c%60%601%7d%7d%2cSystem.Action%7b%60%600%2c%60%601%7d)"><code>Do2</code></a>
+ Performs action if the given result is on the succesful path.             The action takes given result as an argument.
+
+
+
+
+
+*Returns:* Result passed to the method as an argument.
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TFst|Type of first tuple result value.|
+|TSnd|Type of second tuple result value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|Given result.|
+|action|Action to perform.|
+
+#### Method <a name="M%3aMonacs.Core.TupleResult.Do3%60%603(Monacs.Core.Result%7bSystem.ValueTuple%7b%60%600%2c%60%601%2c%60%602%7d%7d%2cSystem.Action%7b%60%600%2c%60%601%2c%60%602%7d)"><code>Do3</code></a>
+ Performs action if the given result is on the succesful path.             The action takes given result as an argument.
+
+
+
+
+
+
+*Returns:* Result passed to the method as an argument.
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TFst|Type of first tuple result value.|
+|TSnd|Type of second tuple result value.|
+|TTrd|Type of third tuple result value.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|Given result.|
+|action|Action to perform.|
+
+#### Method <a name="M%3aMonacs.Core.TupleResult.TryCatch2%60%603(Monacs.Core.Result%7bSystem.ValueTuple%7b%60%600%2c%60%601%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%2c%60%602%7d%2cSystem.Func%7b%60%600%2c%60%601%2cSystem.Exception%2cMonacs.Core.ErrorDetails%7d)"><code>TryCatch2</code></a>
+ Invokes function in try/catch block and returns its result.             If any [<c>System.Exception</c>](#T%3aSystem.Exception) is raised during execution, error handler is invoked and error details are returned.
+
+
+
+
+
+
+
+*Returns:* [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) of invoked function in try block or [<c>ErrorDetails</c>](#T%3aMonacs.Core.ErrorDetails) if any exception occurs.
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TFst|Type of first tuple result value.|
+|TSnd|Type of second tuple result value.|
+|TResult|Type of value returned by invoked function.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|Result to take the value from.|
+|tryFunc|The function to be invoked in 'try' block.|
+|errorHandler|Handler invoked in 'catch' block on any raised exception.|
+
+#### Method <a name="M%3aMonacs.Core.TupleResult.TryCatch3%60%604(Monacs.Core.Result%7bSystem.ValueTuple%7b%60%600%2c%60%601%2c%60%602%7d%7d%2cSystem.Func%7b%60%600%2c%60%601%2c%60%602%2c%60%603%7d%2cSystem.Func%7b%60%600%2c%60%601%2c%60%602%2cSystem.Exception%2cMonacs.Core.ErrorDetails%7d)"><code>TryCatch3</code></a>
+ Invokes function in try/catch block and returns its result.             If any [<c>System.Exception</c>](#T%3aSystem.Exception) is raised during execution, error handler is invoked and error details are returned.
+
+
+
+
+
+
+
+
+*Returns:* [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) of invoked function in try block or [<c>ErrorDetails</c>](#T%3aMonacs.Core.ErrorDetails) if any exception occurs.
+
+
+##### Generic parameters
+|Name|Description|
+|---|---|
+|TFst|Type of first tuple result value.|
+|TSnd|Type of second tuple result value.|
+|TTrd|Type of third tuple result value.|
+|TResult|Type of value returned by invoked function.|
+
+##### Parameters
+|Name|Description|
+|---|---|
+|result|Result to take the value from.|
+|tryFunc|The function to be invoked in 'try' block.|
+|errorHandler|Handler invoked in 'catch' block on any raised exception.|
+
+
+## Type <a name="T%3aMonacs.Core.UnitResult"><code>Monacs.Core.UnitResult</code></a>
  Contains the set of extensions to work with the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type.
 
 
 ### Methods
-#### Method <a name="M%3aMonacs.Core.Unit.UnitResult.Ok"><code>Ok</code></a>
+#### Method <a name="M%3aMonacs.Core.UnitResult.Ok"><code>Ok</code></a>
  Creates the Ok case instance of the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) .
 
 
 
 
-#### Method <a name="M%3aMonacs.Core.Unit.UnitResult.Error(Monacs.Core.ErrorDetails)"><code>Error</code></a>
+#### Method <a name="M%3aMonacs.Core.UnitResult.Error(Monacs.Core.ErrorDetails)"><code>Error</code></a>
  Creates the Error case instance of the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) type, containing error instead of value.
 
 
@@ -1914,7 +2228,7 @@
 |---|---|
 |error|Details of the error.|
 
-#### Method <a name="M%3aMonacs.Core.Unit.UnitResult.Ignore%60%601(Monacs.Core.Result%7b%60%600%7d)"><code>Ignore</code></a>
+#### Method <a name="M%3aMonacs.Core.UnitResult.Ignore%60%601(Monacs.Core.Result%7b%60%600%7d)"><code>Ignore</code></a>
  Rejects the value of the [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) and returns [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) instead.              If the input [<c>Result\`1</c>](#T%3aMonacs.Core.Result%601) is Error then the error details are preserved.
 
 
